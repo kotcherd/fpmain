@@ -1,0 +1,8 @@
+https://fortran-lang.discourse.group/t/module-dependencies-in-cmake-not-tracked-after-a-module-is-updated/4202/3
+
+===== Install fpm
+brew tap fortran-lang/homebrew-fortran
+brew install fpm
+
+
+

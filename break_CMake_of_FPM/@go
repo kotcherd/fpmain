@@ -1,0 +1,8 @@
+rm -rf build
+mkdir build
+cd build
+cmake ..
+make
+echo "Run fpmain --- better hope we get foo"
+./fpmain
+cd ..

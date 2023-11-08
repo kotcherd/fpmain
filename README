@@ -1,0 +1,56 @@
+=====START
+FPM is the original directory illustrating how to use Fortran Package Manager
+
+=====CMake...
+... is the directory where we use CMake for the same setup
+
+=====break... is where we try to break the build by reordering the source files.
+
+./FPM/app/main.f90 ==================== main uses bar
+
+program main
+  use bar_mod, only: bar
+  implicit none
+
+  call bar
+end program main
+
+
+
+./FPM/src/foo.f90 ======================== foo has no dependencies
+
+
+module foo_mod
+    implicit none
+
+    private
+    public foo
+
+contains
+
+    subroutine foo()
+
+        write(*,*) 'foo'
+    end subroutine foo
+end module
+
+
+
+./FPM/src/bar.f90 =========================== bar uses foo 
+
+
+
+module bar_mod
+    use foo_mod, only: foo
+    implicit none
+
+    private
+    public bar
+
+contains
+
+    subroutine bar()
+        call foo()
+    end subroutine
+end module
+

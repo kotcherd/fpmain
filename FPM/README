@@ -1,0 +1,16 @@
+https://fortran-lang.discourse.group/t/module-dependencies-in-cmake-not-tracked-after-a-module-is-updated/4202/3
+
+===== Install fpm
+brew tap fortran-lang/homebrew-fortran
+brew install fpm
+
+===== Using fpm
+ 1091  fpm build
+once the toml file is there, things work
+ 1093  fpm run
+ 1096  cd src
+ 1098  vi foo.f90
+make one change and everything has to be recompiled
+ 1100  fpm run
+
+
